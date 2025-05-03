@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Modificador Terraforming Mars</title>
+
+  <style>
+
+    body {
+
+      font-family: sans-serif;
+
+      background-color: #1c1c1c;
+
+      color: #fff;
+
+      text-align: center;
+
+      padding: 20px;
+
+    }
+
+    h1 {
+
+      font-size: 1.8rem;
+
+      margin-bottom: 20px;
+
+    }
+
+    .slot {
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 10px;
+
+      margin-bottom: 20px;
+
+      flex-wrap: wrap;
+
+    }
+
+    .column {
+
+      width: 30%;
+
+      min-width: 140px;
+
+      padding: 15px;
+
+      border-radius: 10px;
+
+      background: #333;
+
+      box-shadow: 0 0 10px rgba(0,0,0,0.6);
+
+    }
+
+    .label {
+
+      font-weight: bold;
+
+      margin-bottom: 8px;
+
+      font-size: 1.1rem;
+
+    }
+
+    .result {
+
+      font-size: 1rem;
+
+      min-height: 120px;
+
+    }
+
+    img.icon {
+
+      width: 50px;
+
+      margin-bottom: 8px;
+
+    }
+
+    button {
+
+      padding: 12px 20px;
+
+      font-size: 1rem;
+
+      background-color: #4caf50;
+
+      color: white;
+
+      border: none;
+
+      border-radius: 8px;
+
+      cursor: pointer;
+
+      margin-top: 20px;
+
+    }
+
+    button:hover {
+
+      background-color: #45a049;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Modificador Terraforming Mars</h1>
+
+  <div class="slot">
+
+    <div class="column">
+
+      <div class="label">Gatillo</div>
+
+      <div class="result" id="trigger">-</div>
+
+    </div>
+
+    <div class="column">
+
+      <div class="label">Frecuencia</div>
+
+      <div class="result" id="frequency">-</div>
+
+    </div>
+
+    <div class="column">
+
+      <div class="label">Efecto</div>
+
+      <div class="result" id="effect">-</div>
+
+    </div>
+
+  </div>
+
+  <button onclick="generarModificador()">Generar Modificador</button>
+
+  <script>
+
+    const triggers = [
+
+      { text: "Se coloca un símbolo de espacio", img: "URL_IMAGEN_ESPACIO" },
+
+      { text: "Se gana planta", img: "URL_IMAGEN_PLANTA" },
+
+      { text: "Se coloca una ciudad", img: "https://drive.google.com/uc?export=view&id=https://drive.google.com/file/d/1DPqNo6sjC4IGZ6jxRdbpQuRV5atITaxm/view?usp=drivesdk" },
+
+      { text: "Se juega una carta con animal o microbio", img: "URL_IMAGEN_MICROBIO" },
+
+      { text: "Se sube temperatura u oxígeno", img: "URL_IMAGEN_TEMPERATURA" },
+
+      { text: "Se gana titanio", img: "URL_IMAGEN_TITANIO" }
+
+    ];
+
+    const frequencies = [
+
+      { text: "cada 4 veces", img: "URL_IMAGEN_4" },
+
+      { text: "cada 5 veces", img: "URL_IMAGEN_5" },
+
+      { text: "cada 6 veces", img: "URL_IMAGEN_6" },
+
+      { text: "cada 7 veces", img: "URL_IMAGEN_7" },
+
+      { text: "cada 8 veces", img: "URL_IMAGEN_8" },
+
+      { text: "cada 9 veces", img: "URL_IMAGEN_9" }
+
+    ];
+
+    const effects = [
+
+      { text: "El jugador gana 1 titanio y roba 1 carta", img: "URL_IMAGEN_TITANIO_Y_CARTA" },
+
+      { text: "Todos ganan 1 calor", img: "URL_IMAGEN_CALOR" },
+
+      { text: "Se baja 1 nivel de temperatura", img: "URL_IMAGEN_TEMPERATURA_BAJA" },
+
+      { text: "El jugador gana 2 plantas", img: "URL_IMAGEN_2_PLANTAS" },
+
+      { text: "Se quita un océano", img: "URL_IMAGEN_OCEANO" },
+
+      { text: "El jugador coloca un bosque gratuito", img: "URL_IMAGEN_BOSQUE" }
+
+    ];
+
+    function generarModificador() {
+
+      const trigger = triggers[Math.floor(Math.random() * triggers.length)];
+
+      const frequency = frequencies[Math.floor(Math.random() * frequencies.length)];
+
+      const effect = effects[Math.floor(Math.random() * effects.length)];
+
+      document.getElementById("trigger").innerHTML = `<img class="icon" src="${trigger.img}"><br>${trigger.text}`;
+
+      document.getElementById("frequency").innerHTML = `<img class="icon" src="${frequency.img}"><br>${frequency.text}`;
+
+      document.getElementById("effect").innerHTML = `<img class="icon" src="${effect.img}"><br>${effect.text}`;
+
+    }
+
+  </script>
+
+</body>
+
+</html>
+<!-- partial -->
+  
+</body>
+</html>
